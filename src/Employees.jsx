@@ -186,19 +186,23 @@ const Employees = () => {
 
 	return (
 		<main class="container">
-			<div class="row">
+			<div class="row justify-content-center mt-3 mb-3">
 				<div class="col-6">
-					{
-						employees.map(employee => (
-							<div className="card">
-								<img className="card-img" src={femaleProfile} />
-								<div className="card-body">
-									<h5 className="card-title">{employee.fullName}</h5>
-									<p><b>Designation: </b>{employee.designation}</p>
+					<div class="card-collection">
+						{
+							employees.map(employee => (
+								<div id={employee.id} className="card m-3" style={{ cursor: "pointer" }}>
+									{employee.gender === "Male"
+										? <img className="card-img" src={maleProfile} />
+										: <img className="card-img" src={femaleProfile} />}
+									<div className="card-body">
+										<h5 className="card-title">{employee.fullName}</h5>
+										<p><b>Designation: </b>{employee.designation}</p>
+									</div>
 								</div>
-							</div>
-						))
-					}
+							))
+						}
+					</div>
 				</div>
 			</div>
 		</main>
