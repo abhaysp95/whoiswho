@@ -1,0 +1,23 @@
+{
+  "name": "whoiswho",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite --port 3000 --open",
+    "dev": "vite --port 3000 --open",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^3.1.0",
+    "vite": "^4.2.1"
+  },
+  "description": "a simple application for team allocation",
+  "main": "index.js",
+  "author": "abhay <abhaysp95@protonmail.com>",
+  "license": "MIT",
+  "private": false
+}
