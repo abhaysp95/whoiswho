@@ -1,4 +1,6 @@
 import { useState } from "react"
+import maleProfile from '../public/images/icons8-male-96.png';
+import femaleProfile from '../public/images/icons8-female-96.png';
 
 
 const Employees = () => {
@@ -183,10 +185,27 @@ const Employees = () => {
 	])
 
 	return (
-		employees.map(employee => {
-			return <p>{employee.fullName}</p>
-		})
+		<main class="container">
+			<div class="row">
+				<div class="col-6">
+					{
+						employees.map(employee => (
+							<div className="card">
+								<img className="card-img" src={femaleProfile} />
+								<div className="card-body">
+									<h5 className="card-title">{employee.fullName}</h5>
+									<p><b>Designation: </b>{employee.designation}</p>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</main>
 	)
 }
 
 export default Employees
+
+// <a target="_blank" href="https://icons8.com/icon/12351/male">Male</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+// <a target="_blank" href="https://icons8.com/icon/12140/female">Female</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
