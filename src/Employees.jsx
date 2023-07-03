@@ -5,6 +5,8 @@ import femaleProfile from '../public/images/icons8-female-96.png';
 
 const Employees = () => {
 
+	const [currentTeam, setCurrentTeam] = useState("")
+
 	const [employees, setEmployees] = useState([
 		{
 			"id": 1,
@@ -33,14 +35,14 @@ const Employees = () => {
 			"email": "tionnidis3@instagram.com",
 			"designation": "Programmer III",
 			"gender": "Male",
-			"team": "Kanlam"
+			"team": "Toughjoyfax"
 		}, {
 			"id": 5,
 			"fullName": "Loraine Simmons",
 			"email": "lsimmons4@sitemeter.com",
 			"designation": "Research Associate",
 			"gender": "Female",
-			"team": "Voltsillam"
+			"team": "Solarbreeze"
 		}, {
 			"id": 6,
 			"fullName": "Anthony Brinded",
@@ -61,7 +63,7 @@ const Employees = () => {
 			"email": "sfulford7@webmd.com",
 			"designation": "VP Product Management",
 			"gender": "Male",
-			"team": "Pannier"
+			"team": "Tempsoft"
 		}, {
 			"id": 9,
 			"fullName": "Eugenio Dosdale",
@@ -96,7 +98,7 @@ const Employees = () => {
 			"email": "mhamleyc@bloglovin.com",
 			"designation": "Executive Secretary",
 			"gender": "Male",
-			"team": "Sonsing"
+			"team": "Sonair"
 		}, {
 			"id": 14,
 			"fullName": "Gradey Spacy",
@@ -110,42 +112,42 @@ const Employees = () => {
 			"email": "mbugbeee@mapy.cz",
 			"designation": "Programmer II",
 			"gender": "Female",
-			"team": "Andalax"
+			"team": "Domainer"
 		}, {
 			"id": 16,
 			"fullName": "Nan Humbey",
 			"email": "nhumbeyf@dailymotion.com",
 			"designation": "Nurse Practicioner",
 			"gender": "Female",
-			"team": "Job"
+			"team": "Tempsoft"
 		}, {
 			"id": 17,
 			"fullName": "Daron Spadoni",
 			"email": "dspadonig@alexa.com",
 			"designation": "Product Engineer",
 			"gender": "Female",
-			"team": "Pannier"
+			"team": "Tempsoft"
 		}, {
 			"id": 18,
 			"fullName": "Miguela Dobbins",
 			"email": "mdobbinsh@a8.net",
 			"designation": "Cost Accountant",
 			"gender": "Female",
-			"team": "Tampflex"
+			"team": "Tempsoft"
 		}, {
 			"id": 19,
 			"fullName": "Fremont Perazzo",
 			"email": "fperazzoi@army.mil",
 			"designation": "Quality Control Specialist",
 			"gender": "Male",
-			"team": "Sub-Ex"
+			"team": "Treeflex"
 		}, {
 			"id": 20,
 			"fullName": "Stevana MacCaughen",
 			"email": "smaccaughenj@scientificamerican.com",
 			"designation": "VP Marketing",
 			"gender": "Female",
-			"team": "Zamit"
+			"team": "Namfix"
 		}, {
 			"id": 21,
 			"fullName": "Jamill Blumire",
@@ -184,14 +186,35 @@ const Employees = () => {
 		}
 	])
 
+	const teamSelectionHandler = (event) => {
+		setCurrentTeam(event.target.vale)
+	}
+
 	return (
 		<main class="container">
+			<div class="row justify-content-center mt-3 mb-3">
+				<div class="col-6">
+					<select className="form-select form-select-lg" value={currentTeam} onChange={teamSelectionHandler}>
+						<option value="Wrapsafe">Wrapsafe</option>
+						<option value="Domainer">Domainer</option>
+						<option value="Redhold">Redhold</option>
+						<option value="Sonair">Sonair</option>
+						<option value="Tempsoft">Tempsoft</option>
+						<option value="Namfix">Namfix</option>
+						<option value="Treeflex">Treeflex</option>
+						<option value="Wrapsafe">Wrapsafe</option>
+						<option value="Keylex">Keylex</option>
+						<option value="Solarbreeze">Solarbreeze</option>
+						<option value="Toughjoyfax">Toughjoyfax</option>
+					</select>
+				</div>
+			</div>
 			<div class="row justify-content-center mt-3 mb-3">
 				<div class="col-6">
 					<div class="card-collection">
 						{
 							employees.map(employee => (
-								<div id={employee.id} className="card m-3" style={{ cursor: "pointer" }}>
+								<div id={employee.id} className="card m-2" style={{ cursor: "pointer" }}>
 									{employee.gender === "Male"
 										? <img className="card-img" src={maleProfile} />
 										: <img className="card-img" src={femaleProfile} />}
