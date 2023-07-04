@@ -46,6 +46,3 @@ const Employees = ({currentTeam, employees, teamSelectionHandler, employeeClickH
 }
 
 export default Employees
-
-// <a target="_blank" href="https://icons8.com/icon/12351/male">Male</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-// <a target="_blank" href="https://icons8.com/icon/12140/female">Female</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
