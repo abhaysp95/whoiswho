@@ -6,3 +6,12 @@
 .standout {
 	box-shadow: rgba(0, 0, 0, 0.36) 2px 2px 5px, rgb(51, 51, 51) 3px 3px 3px 5px;
 }
+
+h1,h2,h3,h4,h5 {
+	text-align: center;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+}
