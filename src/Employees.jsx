@@ -5,7 +5,7 @@ import femaleProfile from '../public/images/icons8-female-96.png';
 
 const Employees = () => {
 
-	const [currentTeam, setCurrentTeam] = useState("")
+	const [currentTeam, setCurrentTeam] = useState("Solarbreeze")
 
 	const [employees, setEmployees] = useState([
 		{
@@ -187,7 +187,13 @@ const Employees = () => {
 	])
 
 	const teamSelectionHandler = (event) => {
-		setCurrentTeam(event.target.vale)
+		console.log("current team: ", event.target.value)
+		setCurrentTeam(event.target.value)
+	}
+
+	const employeeClickHandler = (event) => {
+		const transformedEmployees = employees.map(employee => employee.id === parseInt(event.currentTarget.id) ? (employee.team === currentTeam ? {...employee, team: ""} : {...employee, team: currentTeam}) : employee)
+		setEmployees(transformedEmployees)
 	}
 
 	return (
@@ -214,7 +220,7 @@ const Employees = () => {
 					<div class="card-collection">
 						{
 							employees.map(employee => (
-								<div id={employee.id} className="card m-2" style={{ cursor: "pointer" }}>
+								<div id={employee.id} className={(employee.team === currentTeam ? "card m-2 standout" : "card m-2")} style={{ cursor: "pointer" }} onClick={employeeClickHandler}>
 									{employee.gender === "Male"
 										? <img className="card-img" src={maleProfile} />
 										: <img className="card-img" src={femaleProfile} />}
