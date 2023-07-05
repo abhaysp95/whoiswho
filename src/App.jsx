@@ -1,8 +1,10 @@
 import './App.css';
 import Header from './Header';
 import Employees from './Employees';
+import GroupMembers from './GroupMembers';
 import Footer from './Footer';
 import { useState, useEffect } from 'react';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 const App = () => {
 	const [currentTeam, setCurrentTeam] = useState(JSON.parse(localStorage.getItem("currentTeam")) || "Solarbreeze")
@@ -207,11 +209,18 @@ const App = () => {
 	}
 
 	return (
-		<div>
+		<BrowserRouter>
 			<Header currentTeam={currentTeam} employeeCount={employees.filter(employee => employee.team === currentTeam).length} />
-			<Employees currentTeam={currentTeam} employees={employees} teamSelectionHandler={teamSelectionHandler} employeeClickHandler={employeeClickHandler} />
+			<Routes>
+				<Route path="/" element={<Employees currentTeam={currentTeam}
+					employees={employees} teamSelectionHandler={teamSelectionHandler}
+					employeeClickHandler={employeeClickHandler}
+				/>}>
+				</Route>
+				<Route path="/groupmem" element={<GroupMembers />}></Route>
+			</Routes>
 			<Footer />
-		</div>
+		</BrowserRouter>
 	)
 };
 

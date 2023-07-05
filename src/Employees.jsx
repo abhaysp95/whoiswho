@@ -4,9 +4,9 @@ import femaleProfile from './images/icons8-female-96.png';
 
 const Employees = ({currentTeam, employees, teamSelectionHandler, employeeClickHandler}) => {
 	return (
-		<main class="container">
-			<div class="row justify-content-center mt-3 mb-3">
-				<div class="col-8">
+		<main className="container">
+			<div className="row justify-content-center mt-3 mb-3">
+				<div className="col-8">
 					<select className="form-select form-select-lg" value={currentTeam} onChange={teamSelectionHandler}>
 						<option value="Wrapsafe">Wrapsafe</option>
 						<option value="Domainer">Domainer</option>
@@ -22,9 +22,9 @@ const Employees = ({currentTeam, employees, teamSelectionHandler, employeeClickH
 					</select>
 				</div>
 			</div>
-			<div class="row justify-content-center mt-3 mb-3">
-				<div class="col-8">
-					<div class="card-collection">
+			<div className="row justify-content-center mt-3 mb-3">
+				<div className="col-8">
+					<div className="card-collection">
 						{
 							employees.map(employee => (
 								<div key={employee.id} id={employee.id} className={(employee.team === currentTeam ? "card m-2 standout" : "card m-2")} style={{ cursor: "pointer" }} onClick={employeeClickHandler}>
