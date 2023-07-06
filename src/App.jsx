@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import EmployeesData from './assets/data/employees_data';
 import Nav from './Nav';
+import NotFound from './NotFound';
 
 const App = () => {
 	const [currentTeam, setCurrentTeam] = useState(JSON.parse(localStorage.getItem("currentTeam")) || "Solarbreeze")
@@ -44,6 +45,7 @@ const App = () => {
 				/>}>
 				</Route>
 				<Route path="/groupmem" element={<GroupMembers />}></Route>
+				<Route path="*" element={<NotFound />}></Route>
 			</Routes>
 			<Footer />
 		</BrowserRouter>
