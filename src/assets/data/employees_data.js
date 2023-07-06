@@ -177,4 +177,6 @@ const EmployeesData = [
 		}
 	]
 
+export const Teams = [ "Wrapsafe", "Domainer", "Redhold", "Sonair", "Tempsoft", "Namfix", "Treeflex", "Wrapsafe", "Keylex", "Solarbreeze", "Toughjoyfax" ]
+
 export default EmployeesData;

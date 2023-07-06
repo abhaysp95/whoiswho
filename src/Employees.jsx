@@ -1,5 +1,6 @@
 import maleProfile from './assets/images/icons8-male-96.png';
 import femaleProfile from './assets/images/icons8-female-96.png';
+import { Teams } from './assets/data/employees_data';
 
 
 const Employees = ({currentTeam, employees, teamSelectionHandler, employeeClickHandler}) => {
@@ -8,17 +9,11 @@ const Employees = ({currentTeam, employees, teamSelectionHandler, employeeClickH
 			<div className="row justify-content-center mt-3 mb-3">
 				<div className="col-8">
 					<select className="form-select form-select-lg" value={currentTeam} onChange={teamSelectionHandler}>
-						<option value="Wrapsafe">Wrapsafe</option>
-						<option value="Domainer">Domainer</option>
-						<option value="Redhold">Redhold</option>
-						<option value="Sonair">Sonair</option>
-						<option value="Tempsoft">Tempsoft</option>
-						<option value="Namfix">Namfix</option>
-						<option value="Treeflex">Treeflex</option>
-						<option value="Wrapsafe">Wrapsafe</option>
-						<option value="Keylex">Keylex</option>
-						<option value="Solarbreeze">Solarbreeze</option>
-						<option value="Toughjoyfax">Toughjoyfax</option>
+						{
+							Teams.map(team => (
+								<option value={team}>{team}</option>
+							))
+						}
 					</select>
 				</div>
 			</div>
