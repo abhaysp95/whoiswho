@@ -1,5 +1,5 @@
-import maleProfile from './images/icons8-male-96.png';
-import femaleProfile from './images/icons8-female-96.png';
+import maleProfile from './assets/images/icons8-male-96.png';
+import femaleProfile from './assets/images/icons8-female-96.png';
 
 
 const Employees = ({currentTeam, employees, teamSelectionHandler, employeeClickHandler}) => {
