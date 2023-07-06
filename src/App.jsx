@@ -44,7 +44,7 @@ const App = () => {
 					employeeClickHandler={employeeClickHandler}
 				/>}>
 				</Route>
-				<Route path="/groupmem" element={<GroupMembers />}></Route>
+				<Route path="/groupmem" element={<GroupMembers employees={employees} currentTeam={currentTeam} setCurrentTeam={setCurrentTeam} />}></Route>
 				<Route path="*" element={<NotFound />}></Route>
 			</Routes>
 			<Footer />
