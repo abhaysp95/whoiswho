@@ -11,7 +11,7 @@ const Employees = ({currentTeam, employees, teamSelectionHandler, employeeClickH
 					<select className="form-select form-select-lg" value={currentTeam} onChange={teamSelectionHandler}>
 						{
 							Teams.map(team => (
-								<option value={team}>{team}</option>
+								<option key={team} value={team}>{team}</option>
 							))
 						}
 					</select>
